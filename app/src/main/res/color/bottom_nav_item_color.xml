@@ -1,0 +1,7 @@
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Seleccionado: opacidad 100% -->
+    <item android:state_checked="true" android:color="@color/verde_oscuro"/>
+
+    <!-- No seleccionado: opacidad 50% -->
+    <item android:color="#8080A000"/> <!-- Verde oscuro con 50% opacidad -->
+</selector>

@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">MueblAR</string>
+
+    <string-array name="tipos_usuario_registro">
+        <item>Cliente</item>
+        <item>Empresa</item>
+    </string-array>
+    <string name="admin_inicio_title">Inicio Administrador</string>
+    <string name="admin_empresas_title">Gestión de Empresas</string>
+    <string name="admin_registros_title">Registros</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

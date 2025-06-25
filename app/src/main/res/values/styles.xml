@@ -1,0 +1,7 @@
+<resources>
+    <style name="BottomNavigationView_NoIndicator" parent="Widget.MaterialComponents.BottomNavigationView">
+        <item name="itemBackground">@android:color/transparent</item>
+        <item name="itemRippleColor">@android:color/transparent</item>
+    </style>
+
+</resources>

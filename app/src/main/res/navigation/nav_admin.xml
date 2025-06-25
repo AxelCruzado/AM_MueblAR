@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_admin"
+    app:startDestination="@id/adminHomeFragment">
+
+    <fragment
+        android:id="@+id/adminHomeFragment"
+        android:name="com.example.mueblar.ui.admin.AdminHomeFragment"
+        android:label="Inicio"
+        tools:layout="@layout/fragment_admin_home" />
+
+    <fragment
+        android:id="@+id/adminEmpresasFragment"
+        android:name="com.example.mueblar.ui.admin.AdminEmpresasFragment"
+        android:label="Empresas"
+        tools:layout="@layout/fragment_admin_empresas" />
+
+    <fragment
+        android:id="@+id/adminRegistrosFragment"
+        android:name="com.example.mueblar.ui.admin.AdminRegistrosFragment"
+        android:label="Registros"
+        tools:layout="@layout/fragment_admin_registros" />
+
+
+</navigation>
