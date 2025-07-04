@@ -1,7 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="BottomNavigationView_NoIndicator" parent="Widget.MaterialComponents.BottomNavigationView">
-        <item name="itemBackground">@android:color/transparent</item>
-        <item name="itemRippleColor">@android:color/transparent</item>
+    <!-- Estilo para texto activo del BottomNavigationView -->
+    <style name="BottomNavigationTextActive" parent="TextAppearance.MaterialComponents.Caption">
+        <item name="android:textColor">@color/ar_primary</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
     </style>
 
+    <!-- Estilo para texto inactivo del BottomNavigationView -->
+    <style name="BottomNavigationTextInactive" parent="TextAppearance.MaterialComponents.Caption">
+        <item name="android:textColor">@color/text_secondary</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
+
+    <!-- Estilo existente (asegúrate de no sobrescribirlo) -->
+    <style name="BottomNavigationView_NoIndicator">
+        <item name="itemRippleColor">@null</item>
+        <item name="android:background">?android:attr/windowBackground</item>
+    </style>
+
+    <!-- Estilo para el título del toolbar -->
+    <style name="ToolbarTitle" parent="TextAppearance.MaterialComponents.Headline6">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:letterSpacing">0.05</item>
+    </style>
+
+    <!-- Estilos mejorados para bottom navigation -->
+    <style name="BottomNavigationTextActiveEnhanced" parent="TextAppearance.MaterialComponents.Caption">
+        <item name="android:textColor">@color/nav_active_enhanced</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:letterSpacing">0.02</item>
+    </style>
+
+    <style name="BottomNavigationTextInactiveEnhanced" parent="TextAppearance.MaterialComponents.Caption">
+        <item name="android:textColor">@color/nav_inactive_enhanced</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:alpha">0.8</item>
+    </style>
 </resources>

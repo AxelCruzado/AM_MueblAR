@@ -28,7 +28,7 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
 
                     when (tipoUsuario) {
                         "Administrador" -> findNavController().navigate(R.id.adminMainFragment)
-                        // "Cliente" -> findNavController().navigate(R.id.clienteMainFragment)
+                        "Cliente" -> findNavController().navigate(R.id.clientMainFragment)
                         // "Empresa" -> findNavController().navigate(R.id.empresaMainFragment)
                         else -> Toast.makeText(requireContext(), "Tipo de usuario no reconocido", Toast.LENGTH_SHORT).show()
                     }

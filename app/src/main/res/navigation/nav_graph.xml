@@ -11,6 +11,9 @@
         <action
             android:id="@+id/action_loginFragment_to_registerFragment"
             app:destination="@id/registerFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_clientMainFragment"
+            app:destination="@id/clientMainFragment" />
     </fragment>
 
     <fragment
@@ -40,4 +43,9 @@
             android:id="@+id/action_adminMainFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/clientMainFragment"
+        android:name="com.example.mueblar.ui.client.ClientMainFragment"
+        android:label="fragment_client_main"
+        tools:layout="@layout/fragment_client_main" />
 </navigation>

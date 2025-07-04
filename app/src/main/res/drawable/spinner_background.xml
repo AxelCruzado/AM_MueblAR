@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Sombra sutil -->
+    <item android:top="2dp" android:left="2dp">
+        <shape android:shape="rectangle">
+            <solid android:color="#10000000" />
+            <corners android:radius="16dp" />
+        </shape>
+    </item>
+
+    <!-- Fondo principal con glassmorphism -->
+    <item android:bottom="2dp" android:right="2dp">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/input_background" />
+            <corners android:radius="16dp" />
+            <stroke
+                android:width="2dp"
+                android:color="@color/ar_accent" />
+        </shape>
+    </item>
+
+    <!-- Overlay glassmorphism -->
+    <item android:bottom="2dp" android:right="2dp">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/glass_background" />
+            <corners android:radius="16dp" />
+        </shape>
+    </item>
+
+    <!-- Icono de dropdown con padding -->
+    <item
+        android:gravity="end|center_vertical"
+        android:drawable="@drawable/ic_arrow_drop_down"
+        android:end="16dp" />
+
+</layer-list>

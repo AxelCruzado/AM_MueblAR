@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/main_background">
+
+    <!-- Toolbar mejorado con efecto glassmorphism -->
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:background="@drawable/toolbar_glassmorphism"
+        android:elevation="12dp"
+        app:title="MueblAR"
+        app:titleTextColor="@color/white"
+        app:titleTextAppearance="@style/ToolbarTitle"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <!-- Línea decorativa con gradiente AR -->
+    <View
+        android:id="@+id/accent_line"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:background="@drawable/ar_accent_line"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"/>
+
+    <!-- Contenedor central con sombra suave -->
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/admin_nav_host_fragment"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintTop_toBottomOf="@id/accent_line"
+        app:layout_constraintBottom_toTopOf="@id/bottom_nav_container"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:defaultNavHost="false"
+        app:navGraph="@navigation/nav_client"/>
+
+    <!-- Contenedor para bottom navigation con efectos mejorados -->
+    <LinearLayout
+        android:id="@+id/bottom_nav_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- Sombra superior del bottom navigation -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@drawable/bottom_nav_shadow"/>
+
+        <!-- Bottom Navigation mejorado -->
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottomNavigationView"
+            android:layout_width="match_parent"
+            android:layout_height="72dp"
+            android:background="@drawable/bottom_nav_glassmorphism"
+            android:elevation="16dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            app:itemIconTint="@color/nav_item_color_selector"
+            app:itemTextColor="@color/nav_item_color_selector"
+            app:labelVisibilityMode="labeled"
+            app:menu="@menu/menu_client"
+            app:itemIconSize="28dp"
+            app:itemPaddingTop="4dp"
+            app:itemPaddingBottom="4dp"
+            app:itemTextAppearanceActive="@style/BottomNavigationTextActiveEnhanced"
+            app:itemTextAppearanceInactive="@style/BottomNavigationTextInactiveEnhanced"
+            app:itemRippleColor="@color/ar_accent_ripple"/>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

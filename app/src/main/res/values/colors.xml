@@ -1,9 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Colores principales de MueblAR -->
+    <color name="ar_primary">#1A237E</color>
+    <color name="ar_accent">#00BCD4</color>
+    <color name="ar_secondary">#7C4DFF</color>
+
+    <!-- Colores de texto premium -->
+    <color name="text_primary_premium">#1A1A1A</color>
+    <color name="text_secondary_premium">#6B6B6B</color>
+    <color name="gradient_text">#1A237E</color>
+
+    <!-- Colores glassmorphism -->
+    <color name="glass_background">#80FFFFFF</color>
+    <color name="glass_surface">#B3FFFFFF</color>
+    <color name="input_background">#F8F9FA</color>
+    <color name="glass_accent">#A600BCD4</color>
+
+    <!-- Colores base -->
+    <color name="white">#FFFFFF</color>
+    <color name="black_alpha_10">#1A000000</color>
+    <color name="black_alpha_05">#0D000000</color>
+
     <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
-    <color name="verde_claro">#53FC18</color>
     <color name="verde_oscuro">#1D4D07</color>
     <color name="text_primary">#001A01</color>
     <color name="text_secondary">#57834D</color>
+
+    <!-- Nuevos colores para efectos mejorados -->
+    <color name="glass_background_enhanced">#CC1A237E</color>
+    <color name="glass_shine">#40FFFFFF</color>
+    <color name="ar_accent_ripple">#3300BCD4</color>
+    <color name="nav_active_enhanced">#FFFFFF</color>
+    <color name="nav_inactive_enhanced">#B3FFFFFF</color>
+
+    <!-- Colores para gradientes avanzados -->
+    <color name="gradient_start">#1A237E</color>
+    <color name="gradient_middle">#7C4DFF</color>
+    <color name="gradient_end">#00BCD4</color>
+
+    <!-- Colores para sombras y efectos -->
+    <color name="shadow_light">#10000000</color>
+    <color name="shadow_medium">#20000000</color>
+    <color name="shadow_dark">#30000000</color>
 </resources>

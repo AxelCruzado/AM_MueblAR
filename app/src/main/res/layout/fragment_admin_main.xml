@@ -15,7 +15,7 @@
         android:text="Inicio"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:background="@color/verde_claro"
+        android:background="@color/ar_accent"
         android:textColor="@color/verde_oscuro" />
 
     <!-- Contenedor central -->
@@ -33,10 +33,10 @@
         style="@style/BottomNavigationView_NoIndicator"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/verde_claro"
+        android:background="@color/ar_accent"
         app:menu="@menu/menu_admin"
-        app:itemIconTint="@color/bottom_nav_item_color"
-        app:itemTextColor="@color/bottom_nav_item_color" />
+        app:itemIconTint="@color/black"
+        app:itemTextColor="@color/black" />
 
 
 </LinearLayout>
