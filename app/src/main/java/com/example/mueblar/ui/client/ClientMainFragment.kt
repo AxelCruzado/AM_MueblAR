@@ -49,7 +49,7 @@ class ClientMainFragment : Fragment() {
             // Manejar navegación
             when (item.itemId) {
                 R.id.clientHomeFragment -> {
-                    navController.navigate(R.id.clientHomeFragment2)
+                    navController.navigate(R.id.clientHomeFragment)
                     true
                 }
                 R.id.clientProductosFragment -> {

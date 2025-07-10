@@ -14,6 +14,7 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
     private val viewModel: LoginViewModel by viewModels()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         binding = FragmentLoginBinding.bind(view)
 
         // Limpiar campos al entrar
@@ -22,18 +23,40 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
 
         // Observer del resultado del login
         viewModel.loginResult.observe(viewLifecycleOwner) { result ->
-            result?.let { (success, tipoUsuario) ->
+            result?.let { (success, message, tipoUsuario, estadoEmpresa) ->
                 if (success) {
-                    Toast.makeText(requireContext(), "Bienvenido $tipoUsuario", Toast.LENGTH_SHORT).show()
-
                     when (tipoUsuario) {
-                        "Administrador" -> findNavController().navigate(R.id.adminMainFragment)
-                        "Cliente" -> findNavController().navigate(R.id.clientMainFragment)
-                        // "Empresa" -> findNavController().navigate(R.id.empresaMainFragment)
-                        else -> Toast.makeText(requireContext(), "Tipo de usuario no reconocido", Toast.LENGTH_SHORT).show()
+                        "cliente" -> {
+                            Toast.makeText(requireContext(), "Bienvenido, cliente", Toast.LENGTH_SHORT).show()
+                            findNavController().navigate(R.id.clientMainFragment)
+                        }
+                        "admin" -> {
+                            Toast.makeText(requireContext(), "Bienvenido, administrador", Toast.LENGTH_SHORT).show()
+                            findNavController().navigate(R.id.adminMainFragment)
+                        }
+                        "empresa" -> {
+                            when (estadoEmpresa) {
+                                "aprobado" -> {
+                                    Toast.makeText(requireContext(), "Bienvenido, empresa", Toast.LENGTH_SHORT).show()
+                                    findNavController().navigate(R.id.empresaMainFragment)
+                                }
+                                "pendiente" -> {
+                                    Toast.makeText(requireContext(), "Tu solicitud está en verificación", Toast.LENGTH_LONG).show()
+                                }
+                                "rechazado" -> {
+                                    Toast.makeText(requireContext(), "Tu cuenta no ha sido aprobada", Toast.LENGTH_LONG).show()
+                                }
+                                else -> {
+                                    Toast.makeText(requireContext(), "Estado de empresa no reconocido", Toast.LENGTH_SHORT).show()
+                                }
+                            }
+                        }
+                        else -> {
+                            Toast.makeText(requireContext(), "Tipo de usuario no reconocido", Toast.LENGTH_SHORT).show()
+                        }
                     }
                 } else {
-                    Toast.makeText(requireContext(), tipoUsuario, Toast.LENGTH_SHORT).show()
+                    Toast.makeText(requireContext(), message, Toast.LENGTH_LONG).show()
                 }
 
                 // Limpiar el resultado para evitar auto-navegación al volver

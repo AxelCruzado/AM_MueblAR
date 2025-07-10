@@ -12,17 +12,19 @@ class LoginViewModel : ViewModel() {
     private val auth = FirebaseAuth.getInstance()
     private val db = FirebaseFirestore.getInstance()
 
-    private val _loginResult = MutableLiveData<Pair<Boolean, String>?>()
-    val loginResult: LiveData<Pair<Boolean, String>?> get() = _loginResult
+    private val _loginResult = MutableLiveData<Quadruple<Boolean, String, String?, String?>?>()
+    val loginResult: LiveData<Quadruple<Boolean, String, String?, String?>?> get() = _loginResult
+
+    data class Quadruple<A, B, C, D>(val first: A, val second: B, val third: C, val fourth: D)
 
     fun loginUser(email: String, password: String) {
         if (!Validators.isValidEmail(email)) {
-            _loginResult.value = Pair(false, "Correo inválido")
+            _loginResult.value = Quadruple(false, "Correo inválido", null, null)
             return
         }
 
         if (password.length < 6) {
-            _loginResult.value = Pair(false, "La contraseña debe tener al menos 6 caracteres")
+            _loginResult.value = Quadruple(false, "La contraseña debe tener al menos 6 caracteres", null, null)
             return
         }
 
@@ -31,23 +33,37 @@ class LoginViewModel : ViewModel() {
                 if (task.isSuccessful) {
                     val uid = auth.currentUser?.uid
                     if (uid != null) {
-                        db.collection("usuarios").document(uid).get()
+                        // Primero buscar en la colección Clientes
+                        db.collection("clientes").document(uid).get()
                             .addOnSuccessListener { document ->
                                 if (document.exists()) {
-                                    val tipo = document.getString("tipoUsuario") ?: ""
-                                    _loginResult.value = Pair(true, tipo)
+                                    val tipoUsuario = document.getString("tipo_usuario") ?: ""
+                                    _loginResult.value = Quadruple(true, "Login exitoso", tipoUsuario, null)
                                 } else {
-                                    _loginResult.value = Pair(false, "No se encontró al usuario")
+                                    // Si no está en Clientes, buscar en Empresas
+                                    db.collection("empresas").document(uid).get()
+                                        .addOnSuccessListener { empresaDoc ->
+                                            if (empresaDoc.exists()) {
+                                                val tipoUsuario = empresaDoc.getString("tipo_usuario") ?: ""
+                                                val estado = empresaDoc.getString("estado") ?: ""
+                                                _loginResult.value = Quadruple(true, "Login exitoso", tipoUsuario, estado)
+                                            } else {
+                                                _loginResult.value = Quadruple(false, "No se encontró al usuario", null, null)
+                                            }
+                                        }
+                                        .addOnFailureListener { e ->
+                                            _loginResult.value = Quadruple(false, "Error al obtener datos de empresa: ${e.message}", null, null)
+                                        }
                                 }
                             }
                             .addOnFailureListener { e ->
-                                _loginResult.value = Pair(false, "Error al obtener datos: ${e.message}")
+                                _loginResult.value = Quadruple(false, "Error al obtener datos de cliente: ${e.message}", null, null)
                             }
                     } else {
-                        _loginResult.value = Pair(false, "UID inválido")
+                        _loginResult.value = Quadruple(false, "UID inválido", null, null)
                     }
                 } else {
-                    _loginResult.value = Pair(false, "Error: ${task.exception?.message}")
+                    _loginResult.value = Quadruple(false, "Error: ${task.exception?.message}", null, null)
                 }
             }
     }

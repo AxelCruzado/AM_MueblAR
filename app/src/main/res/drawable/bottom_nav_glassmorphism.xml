@@ -2,32 +2,15 @@
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
     <!-- Fondo con efecto glassmorphism -->
     <item>
+
         <shape android:shape="rectangle">
+
             <solid android:color="@color/glass_background_enhanced"/>
             <corners
-                android:topLeftRadius="24dp"
-                android:topRightRadius="24dp"/>
+                android:topLeftRadius="30dp"
+                android:topRightRadius="30dp"/>
         </shape>
+
     </item>
 
-    <!-- Borde superior con gradiente -->
-    <item android:top="0dp" android:height="2dp">
-        <shape android:shape="rectangle">
-            <gradient
-                android:startColor="@color/ar_accent"
-                android:centerColor="@color/ar_secondary"
-                android:endColor="@color/ar_primary"
-                android:angle="0"/>
-            <corners
-                android:topLeftRadius="24dp"
-                android:topRightRadius="24dp"/>
-        </shape>
-    </item>
-
-    <!-- Efecto de brillo interior -->
-    <item android:top="2dp" android:height="1dp">
-        <shape android:shape="rectangle">
-            <solid android:color="@color/glass_shine"/>
-        </shape>
-    </item>
 </layer-list>

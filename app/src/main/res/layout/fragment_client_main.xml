@@ -60,22 +60,23 @@
         <!-- Bottom Navigation mejorado -->
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bottomNavigationView"
+            style="@style/CustomBottomNavView"
             android:layout_width="match_parent"
-            android:layout_height="72dp"
+            android:layout_height="wrap_content"
             android:background="@drawable/bottom_nav_glassmorphism"
             android:elevation="16dp"
             android:paddingTop="8dp"
-            android:paddingBottom="8dp"
+            android:paddingBottom="0dp"
             app:itemIconTint="@color/nav_item_color_selector"
             app:itemTextColor="@color/nav_item_color_selector"
             app:labelVisibilityMode="labeled"
             app:menu="@menu/menu_client"
-            app:itemIconSize="28dp"
-            app:itemPaddingTop="4dp"
-            app:itemPaddingBottom="4dp"
+            app:itemPaddingTop="7dp"
+            app:itemPaddingBottom="8dp"
             app:itemTextAppearanceActive="@style/BottomNavigationTextActiveEnhanced"
             app:itemTextAppearanceInactive="@style/BottomNavigationTextInactiveEnhanced"
-            app:itemRippleColor="@color/ar_accent_ripple"/>
+            app:itemRippleColor="@android:color/transparent" />
+
 
     </LinearLayout>
 

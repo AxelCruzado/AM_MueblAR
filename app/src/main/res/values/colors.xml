@@ -11,27 +11,27 @@
     <color name="gradient_text">#1A237E</color>
 
     <!-- Colores glassmorphism -->
-    <color name="glass_background">#80FFFFFF</color>
+    <color name="glass_background_new">#E6F0FA</color>
     <color name="glass_surface">#B3FFFFFF</color>
     <color name="input_background">#F8F9FA</color>
     <color name="glass_accent">#A600BCD4</color>
+    <color name="glass_background_enhanced">#CC1A237E</color> <!-- Restaurado -->
 
     <!-- Colores base -->
     <color name="white">#FFFFFF</color>
     <color name="black_alpha_10">#1A000000</color>
     <color name="black_alpha_05">#0D000000</color>
-
     <color name="black">#FF000000</color>
     <color name="verde_oscuro">#1D4D07</color>
     <color name="text_primary">#001A01</color>
     <color name="text_secondary">#57834D</color>
 
     <!-- Nuevos colores para efectos mejorados -->
-    <color name="glass_background_enhanced">#CC1A237E</color>
     <color name="glass_shine">#40FFFFFF</color>
     <color name="ar_accent_ripple">#3300BCD4</color>
     <color name="nav_active_enhanced">#FFFFFF</color>
-    <color name="nav_inactive_enhanced">#B3FFFFFF</color>
+    <color name="nav_inactive_enhanced">#B0BEC5</color> <!-- Ajustado para mejor contraste -->
+    <color name="tab_inactive_new">#B0BEC5</color>
 
     <!-- Colores para gradientes avanzados -->
     <color name="gradient_start">#1A237E</color>

@@ -18,7 +18,8 @@
             android:layout_width="match_parent"
             android:layout_height="200dp"
             app:cardCornerRadius="24dp"
-            app:cardElevation="16dp"
+            android:elevation="2dp"
+
             android:layout_marginBottom="24dp">
 
             <ImageView
@@ -64,7 +65,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:cardCornerRadius="20dp"
-            app:cardElevation="8dp"
             android:layout_marginBottom="24dp"
             app:cardBackgroundColor="@color/glass_background_enhanced">
 
@@ -125,136 +125,49 @@
                 android:padding="8dp"/>
         </LinearLayout>
 
-        <!-- Carrusel de productos destacados mejorado -->
         <androidx.cardview.widget.CardView
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:cardCornerRadius="20dp"
-            app:cardElevation="8dp"
-            android:layout_marginBottom="16dp"
-            app:cardBackgroundColor="@color/glass_background">
+            app:cardCornerRadius="16dp"
+            app:cardElevation="4dp"
+            app:cardBackgroundColor="@color/glass_background_new"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginBottom="24dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="8dp">
+                android:padding="16dp">
 
+                <!-- ViewPager para productos destacados -->
                 <androidx.viewpager2.widget.ViewPager2
                     android:id="@+id/vpProductosDestacados"
                     android:layout_width="match_parent"
-                    android:layout_height="220dp"
-                    android:layout_marginBottom="12dp"/>
+                    android:layout_height="240dp"
+                    android:orientation="horizontal"
+                    android:background="@android:color/transparent" />
 
+                <!-- Indicadores del ViewPager -->
                 <com.google.android.material.tabs.TabLayout
                     android:id="@+id/tabLayoutIndicators"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:tabBackground="@drawable/tab_indicator_enhanced"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="8dp"
+                    app:tabIndicator="@drawable/tab_indicator_enhanced"
+                    app:tabIndicatorHeight="4dp"
+                    app:tabIndicatorColor="@color/ar_accent"
+                    app:tabBackground="@android:color/transparent"
                     app:tabGravity="center"
-                    app:tabIndicatorHeight="0dp"
-                    app:tabMode="scrollable"/>
+                    app:tabMode="fixed"
+                    app:tabPaddingStart="6dp"
+                    app:tabPaddingEnd="6dp" />
+
             </LinearLayout>
+
         </androidx.cardview.widget.CardView>
-
-        <!-- Título de categorías -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center_vertical"
-            android:layout_marginBottom="16dp">
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="🏠 Explorar por Categoría"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                android:textColor="@color/text_primary"
-                android:fontFamily="sans-serif-medium"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Ver más"
-                android:textSize="14sp"
-                android:textColor="@color/ar_accent"
-                android:fontFamily="sans-serif-medium"
-                android:background="?attr/selectableItemBackground"
-                android:padding="8dp"/>
-        </LinearLayout>
-
-        <!-- Categorías con diseño mejorado -->
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:cardCornerRadius="20dp"
-            app:cardElevation="8dp"
-            android:layout_marginBottom="24dp"
-            app:cardBackgroundColor="@color/glass_background">
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rvCategorias"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-                app:spanCount="2"
-                android:padding="12dp"/>
-        </androidx.cardview.widget.CardView>
-
-        <!-- Título de empresas destacadas -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center_vertical"
-            android:layout_marginBottom="16dp">
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="🏪 Tiendas Destacadas"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                android:textColor="@color/text_primary"
-                android:fontFamily="sans-serif-medium"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Explorar"
-                android:textSize="14sp"
-                android:textColor="@color/ar_accent"
-                android:fontFamily="sans-serif-medium"
-                android:background="?attr/selectableItemBackground"
-                android:padding="8dp"/>
-        </LinearLayout>
-
-        <!-- Empresas destacadas con carrusel horizontal -->
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:cardCornerRadius="20dp"
-            app:cardElevation="8dp"
-            android:layout_marginBottom="20dp"
-            app:cardBackgroundColor="@color/glass_background">
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rvEmpresasDestacadas"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                android:orientation="horizontal"
-                android:padding="12dp"/>
-        </androidx.cardview.widget.CardView>
-
-        <!-- Espaciado final -->
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="16dp"/>
-
     </LinearLayout>
 </androidx.core.widget.NestedScrollView>
