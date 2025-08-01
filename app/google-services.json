@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "567646952469",
-    "project_id": "demofirebaseapp-49cb5",
-    "storage_bucket": "demofirebaseapp-49cb5.firebasestorage.app"
+    "project_number": "429148866548",
+    "project_id": "mueblar-3719b",
+    "storage_bucket": "mueblar-3719b.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:567646952469:android:3c0339ff859d3d052b021c",
+        "mobilesdk_app_id": "1:429148866548:android:3494084151854ceab05ba1",
         "android_client_info": {
           "package_name": "com.example.mueblar"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyD7hMcvUtqqqoIgFHMzNlz2JUvvmjNS2fs"
+          "current_key": "AIzaSyDpMn7LCkc2y47J_qpz7gFv5kBTRPl1LYY"
         }
       ],
       "services": {

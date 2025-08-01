@@ -28,7 +28,7 @@
 
     <!-- Contenedor central con sombra suave -->
     <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/admin_nav_host_fragment"
+        android:id="@+id/client_nav_host_fragment"
         android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -39,7 +39,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:defaultNavHost="false"
-        app:navGraph="@navigation/nav_client"/>
+        app:navGraph="@navigation/nav_cliente"/>
 
     <!-- Contenedor para bottom navigation con efectos mejorados -->
     <LinearLayout

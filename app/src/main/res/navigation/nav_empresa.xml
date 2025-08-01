@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_empresa"
+    app:startDestination="@id/empresaHomeFragment">
+
+    <fragment
+        android:id="@+id/empresaHomeFragment"
+        android:name="com.example.mueblar.ui.empresa.EmpresaHomeFragment"
+        android:label="fragment_empresa_home"
+        tools:layout="@layout/fragment_empresa_home" />
+
+    <fragment
+        android:id="@+id/empresaProductosFragment"
+        android:name="com.example.mueblar.ui.empresa.EmpresaProductosFragment"
+        android:label="fragment_empresa_productos"
+        tools:layout="@layout/fragment_empresa_productos">
+        <action
+            android:id="@+id/action_empresaProductosFragment_to_agregarProductoDialogFragment"
+            app:destination="@id/agregarProductoDialogFragment" />
+        <action
+            android:id="@+id/action_empresaProductosFragment_to_empresaHomeFragment"
+            app:destination="@id/empresaHomeFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/empresaPerfilFragment"
+        android:name="com.example.mueblar.ui.empresa.EmpresaPerfilFragment"
+        android:label="fragment_empresa_perfil"
+        tools:layout="@layout/fragment_empresa_perfil">
+        <action
+            android:id="@+id/action_empresaPerfilFragment_to_mapaUbicacionActivity"
+            app:destination="@id/mapaUbicacionActivity" />
+        <action
+            android:id="@+id/action_empresaPerfilFragment_to_empresaHomeFragment"
+            app:destination="@id/empresaHomeFragment" />
+    </fragment>
+
+    <dialog
+        android:id="@+id/agregarProductoDialogFragment"
+        android:name="com.example.mueblar.ui.empresa.AgregarProductoDialogFragment"
+        android:label="AgregarProductoDialogFragment">
+        <action
+            android:id="@+id/action_agregarProductoDialogFragment_to_empresaHomeFragment"
+            app:destination="@id/empresaHomeFragment"
+            app:popUpTo="@id/empresaHomeFragment"
+            app:popUpToInclusive="false" />
+    </dialog>
+
+    <activity
+        android:id="@+id/mapaUbicacionActivity"
+        android:name="com.example.mueblar.ui.ubicacion.MapaUbicacionActivity"
+        android:label="MapaUbicacionActivity" />
+</navigation>

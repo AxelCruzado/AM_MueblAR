@@ -1,0 +1,60 @@
+<!-- res/drawable/ic_furniture_decoration.xml -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="80dp"
+    android:height="80dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+
+    <!-- Silla moderna - Asiento -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M5,12h14c1.1,0 2,0.9 2,2v2c0,1.1 -0.9,2 -2,2H5c-1.1,0 -2,-0.9 -2,-2v-2C3,12.9 3.9,12 5,12z" />
+
+    <!-- Respaldo -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M6,5h12c1.1,0 2,0.9 2,2v5H4V7C4,5.9 4.9,5 6,5z" />
+
+    <!-- Patas delanteras -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M6,18h2v3H6V18z" />
+
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M16,18h2v3h-2V18z" />
+
+    <!-- Patas traseras -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M6,5h2v8H6V5z" />
+
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M16,5h2v8h-2V5z" />
+
+    <!-- Detalles decorativos -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M11.5,7.5h1v1h-1v-1z" />
+
+    <!-- Líneas de diseño -->
+    <path
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="0.3"
+        android:strokeLineCap="round"
+        android:pathData="M8,14h8" />
+
+    <path
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="0.3"
+        android:strokeLineCap="round"
+        android:pathData="M8,7h8" />
+
+    <!-- Mesa/superficie complementaria -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:fillAlpha="0.3"
+        android:pathData="M2,20h20v1H2V20z" />
+
+</vector>

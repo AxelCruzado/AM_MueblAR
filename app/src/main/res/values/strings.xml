@@ -7,9 +7,44 @@
     </string-array>
     <string name="admin_inicio_title">Inicio Administrador</string>
     <string name="admin_empresas_title">Gestión de Empresas</string>
-    <string name="admin_registros_title">Registros</string>
-
+    <string name="admin_registros_title">Registros de Empresas</string>
+    <string name="no_solicitudes">No hay solicitudes</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="retroceder">Retroceder</string>
     <string name="iniciar_sesi_n">Iniciar sesión</string>
+
+    <!-- Strings para administrador -->
+    <string name="admin_welcome_title">Panel de Administración</string>
+    <string name="admin_welcome_subtitle">Gestiona tu sistema de forma eficiente</string>
+    <string name="admin_dashboard_title">Bienvenido al Dashboard</string>
+    <string name="admin_dashboard_description">Accede a todas las funcionalidades administrativas desde un solo lugar. Controla usuarios, configuraciones y supervisa el estado del sistema.</string>
+    <string name="admin_quick_access_title">Acceso Rápido</string>
+    <string name="admin_users_title">Usuarios</string>
+    <string name="admin_settings_title">Configuración</string>
+    <string name="admin_system_status_title">Estado del Sistema</string>
+    <string name="admin_system_status_description">Todos los servicios funcionan correctamente. Última actualización: hace 2 minutos.</string>
+
+    <!-- Strings para empresa de muebles -->
+    <string name="furniture_company_welcome">Catálogo de Muebles</string>
+    <string name="furniture_company_subtitle">Gestiona tus productos en realidad aumentada</string>
+    <string name="furniture_products_count">47</string>
+    <string name="furniture_products_label">Productos</string>
+    <string name="furniture_categories_count">8</string>
+    <string name="furniture_categories_label">Categorías</string>
+    <string name="furniture_ar_views_count">1.2k</string>
+    <string name="furniture_ar_views_label">Vistas AR</string>
+    <string name="furniture_catalog_title">Tu Catálogo Digital</string>
+    <string name="furniture_catalog_description">Todos tus muebles están optimizados para visualización en realidad aumentada. Los clientes pueden ver cómo se verían en su hogar antes de comprar.</string>
+    <string name="furniture_categories_title">Categorías de Productos</string>
+    <string name="furniture_living_room">Sala de Estar</string>
+    <string name="furniture_living_room_count">23 productos</string>
+    <string name="furniture_bedroom">Dormitorio</string>
+    <string name="furniture_bedroom_count">18 productos</string>
+    <string name="furniture_ar_technology_title">Tecnología AR Activa</string>
+    <string name="furniture_ar_technology_description">Tus productos están disponibles en realidad aumentada para que los clientes puedan visualizarlos en su espacio real usando la cámara de su dispositivo.</string>
+    <string name="furniture_company_profile_title">Perfil de Empresa</string>
+    <string name="furniture_profile_status">Completo</string>
+    <string name="furniture_company_profile_description">Tu perfil empresarial está completo y optimizado. Los clientes pueden encontrar fácilmente tu catálogo y contactar contigo.</string>
+    <string name="eliminar_producto">Eliminar producto</string>
+    <string name="editar_producto">Editar producto</string>
 </resources>

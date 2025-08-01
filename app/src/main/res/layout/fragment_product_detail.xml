@@ -59,6 +59,32 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
+    <!-- Precio del producto -->
+    <TextView
+        android:id="@+id/tvPrecio"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginHorizontal="8dp"
+        android:text="Precio"
+        android:textColor="@color/text_primary_premium"
+        android:textSize="18sp"
+        android:fontFamily="sans-serif-medium"
+        app:layout_constraintTop_toBottomOf="@id/tvDescripcion"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Contenedor para la vista AR -->
+    <FrameLayout
+        android:id="@+id/arContainer"
+        android:layout_width="0dp"
+        android:layout_height="300dp"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/tvPrecio"
+        app:layout_constraintBottom_toTopOf="@id/btnRealidadAumentada"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
     <!-- Botón de Realidad Aumentada -->
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnRealidadAumentada"
@@ -70,7 +96,7 @@
         android:textColor="@color/white"
         app:backgroundTint="@color/ar_accent"
         app:cornerRadius="8dp"
-        app:layout_constraintTop_toBottomOf="@id/tvDescripcion"
+        app:layout_constraintTop_toBottomOf="@id/arContainer"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 

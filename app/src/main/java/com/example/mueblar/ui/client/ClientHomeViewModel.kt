@@ -22,7 +22,7 @@ class ClientHomeViewModel : ViewModel() {
     private fun obtenerProductosDestacados() {
         db.collection("productos")
             .whereEqualTo("disponible", true)
-            .orderBy("fechaCreacion", Query.Direction.DESCENDING)
+
             .limit(10)
             .get()
             .addOnSuccessListener { result ->

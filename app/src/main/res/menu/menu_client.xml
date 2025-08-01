@@ -12,8 +12,12 @@
         android:title="Productos" />
 
     <item
-        android:id="@+id/clientBusquedaFragment"
-        android:icon="@drawable/ic_client_search"
-        android:title="Busqueda" />
+        android:id="@+id/clientFavoritoFragment"
+        android:icon="@drawable/ic_onfavorite"
+        android:title="Favoritos" />
+    <item
+        android:id="@+id/clientPerfilFragment"
+        android:icon="@drawable/ic_person_modern"
+        android:title="Perfil" />
 
 </menu>

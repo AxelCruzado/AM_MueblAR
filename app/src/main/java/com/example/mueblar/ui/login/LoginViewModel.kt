@@ -11,6 +11,9 @@ class LoginViewModel : ViewModel() {
 
     private val auth = FirebaseAuth.getInstance()
     private val db = FirebaseFirestore.getInstance()
+    private val _isLoading = MutableLiveData<Boolean>()
+    val isLoading: LiveData<Boolean> get() = _isLoading
+
 
     private val _loginResult = MutableLiveData<Quadruple<Boolean, String, String?, String?>?>()
     val loginResult: LiveData<Quadruple<Boolean, String, String?, String?>?> get() = _loginResult
@@ -28,19 +31,19 @@ class LoginViewModel : ViewModel() {
             return
         }
 
+        _isLoading.value = true  // ⬅️ Loading ON
+
         auth.signInWithEmailAndPassword(email, password)
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
                     val uid = auth.currentUser?.uid
                     if (uid != null) {
-                        // Primero buscar en la colección Clientes
                         db.collection("clientes").document(uid).get()
                             .addOnSuccessListener { document ->
                                 if (document.exists()) {
                                     val tipoUsuario = document.getString("tipo_usuario") ?: ""
                                     _loginResult.value = Quadruple(true, "Login exitoso", tipoUsuario, null)
                                 } else {
-                                    // Si no está en Clientes, buscar en Empresas
                                     db.collection("empresas").document(uid).get()
                                         .addOnSuccessListener { empresaDoc ->
                                             if (empresaDoc.exists()) {
@@ -50,23 +53,30 @@ class LoginViewModel : ViewModel() {
                                             } else {
                                                 _loginResult.value = Quadruple(false, "No se encontró al usuario", null, null)
                                             }
+                                            _isLoading.value = false  // ⬅️ Loading OFF
                                         }
                                         .addOnFailureListener { e ->
                                             _loginResult.value = Quadruple(false, "Error al obtener datos de empresa: ${e.message}", null, null)
+                                            _isLoading.value = false
                                         }
                                 }
+                                _isLoading.value = false
                             }
                             .addOnFailureListener { e ->
                                 _loginResult.value = Quadruple(false, "Error al obtener datos de cliente: ${e.message}", null, null)
+                                _isLoading.value = false
                             }
                     } else {
                         _loginResult.value = Quadruple(false, "UID inválido", null, null)
+                        _isLoading.value = false
                     }
                 } else {
                     _loginResult.value = Quadruple(false, "Error: ${task.exception?.message}", null, null)
+                    _isLoading.value = false
                 }
             }
     }
+
 
     fun clearLoginResult() {
         _loginResult.value = null

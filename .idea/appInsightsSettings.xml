@@ -9,9 +9,9 @@
               <option name="connection">
                 <ConnectionSetting>
                   <option name="appId" value="com.example.mueblar" />
-                  <option name="mobileSdkAppId" value="1:567646952469:android:3c0339ff859d3d052b021c" />
-                  <option name="projectId" value="demofirebaseapp-49cb5" />
-                  <option name="projectNumber" value="567646952469" />
+                  <option name="mobileSdkAppId" value="1:429148866548:android:3494084151854ceab05ba1" />
+                  <option name="projectId" value="mueblar-3719b" />
+                  <option name="projectNumber" value="429148866548" />
                 </ConnectionSetting>
               </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />

@@ -42,4 +42,27 @@
     <color name="shadow_light">#10000000</color>
     <color name="shadow_medium">#20000000</color>
     <color name="shadow_dark">#30000000</color>
+
+    <!-- Colores para app de muebles -->
+    <color name="furniture_primary">#8B4513</color>
+    <color name="furniture_secondary">#D2691E</color>
+    <color name="living_room_gradient">#FF6B6B</color>
+    <color name="bedroom_gradient">#4ECDC4</color>
+    <color name="ar_purple">#9C27B0</color>
+    <color name="ar_card_background">#F3E5F5</color>
+    <color name="success_green">#4CAF50</color>
+
+    <!-- Colores para perfil del cliente -->
+    <color name="background_light">#F5F7FA</color>
+    <color name="white_alpha_80">#CCFFFFFF</color>
+    <color name="logout_red">#E53E3E</color>
+
+    <!-- Colores para perfil del empresa -->
+    <color name="empresa_accent">#1A365D</color>
+    <color name="white_alpha_90">#E6FFFFFF</color>
+
+
+    <color name="ar_primary_variant">#3949ab</color>
+    <color name="white_transparent">#80FFFFFF</color>
+
 </resources>

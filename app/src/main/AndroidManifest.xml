@@ -1,10 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-
-    <!-- Permisos necesarios para Firebase -->
+    <!-- Permisos para Firebase -->
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- Permisos para Google Maps -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" /> <!-- Permisos para ARCore -->
+    <uses-permission android:name="android.permission.CAMERA" /> <!-- Características requeridas para ARCore -->
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
+    <uses-feature
+        android:name="android.hardware.sensor.gyroscope"
+        android:required="true" />
+    <uses-feature
+        android:name="android.hardware.camera.ar"
+        android:required="true" /> <!-- Indica que la app requiere ARCore -->
+    <meta-data
+        android:name="com.google.ar.core"
+        android:value="required" />
 
     <application
         android:allowBackup="true"
@@ -16,9 +31,23 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MueblAR"
         tools:targetApi="31">
+        <activity
+            android:name=".ui.ubicacion.MapaUbicacionActivity"
+            android:exported="false" />
+        <!-- Versión de Google Play Services -->
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" /> <!-- Clave de API para Google Maps -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="${MAPS_API_KEY}" /> <!-- Clave de API para ARCore -->
+        <meta-data
+            android:name="com.google.android.ar.API_KEY"
+            android:value="${ARCORE_API_KEY}" />
 
         <activity
             android:name=".MainActivity"
+            android:windowSoftInputMode="adjustResize"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -26,6 +55,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <service
+            android:name=".data.service.MyFirebaseMessagingService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
     </application>
 
 </manifest>

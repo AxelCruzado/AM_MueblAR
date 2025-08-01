@@ -4,5 +4,7 @@ data class Cliente(
     val apellido: String = "",
     val correo: String = "",
     val telefono: String = "",
-    val tipoUsuario: String = ""
+    val tipoUsuario: String = "",
+    val dni:String="",
+    val imagen:String=""
 )

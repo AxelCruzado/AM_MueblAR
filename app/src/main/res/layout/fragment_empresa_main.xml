@@ -1,13 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.empresa.EmpresaMainFragment">
+    android:layout_height="match_parent">
 
-    <TextView
+    <!-- Toolbar -->
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Hello" />
+        android:layout_height="64dp"
+        android:background="@drawable/toolbar_glassmorphism"
+        android:elevation="12dp"
+        app:title="Empresa"
+        app:titleTextColor="@color/white"
+        app:titleTextAppearance="@style/ToolbarTitle"
+        app:layout_constraintTop_toTopOf="parent"/>
 
-</FrameLayout>
+    <!-- Contenedor central -->
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/empresa_nav_host_fragment"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        app:defaultNavHost="false"
+        app:navGraph="@navigation/nav_empresa" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        style="@style/CustomBottomNavView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bottom_nav_glassmorphism"
+        android:elevation="16dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="0dp"
+        app:itemIconTint="@color/nav_item_color_selector"
+        app:itemTextColor="@color/nav_item_color_selector"
+        app:labelVisibilityMode="labeled"
+        app:menu="@menu/menu_empresa"
+        app:itemPaddingTop="7dp"
+        app:itemPaddingBottom="8dp"
+        app:itemTextAppearanceActive="@style/BottomNavigationTextActiveEnhanced"
+        app:itemTextAppearanceInactive="@style/BottomNavigationTextInactiveEnhanced"
+        app:itemRippleColor="@android:color/transparent" />
+
+
+
+</LinearLayout>
+

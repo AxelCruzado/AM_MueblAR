@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/splashFragment">
+
+    <!-- Destino raíz: Login -->
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.example.mueblar.ui.splash.SplashFragment"
+        android:label="SplashFragment" >
+        <action
+            android:id="@+id/action_splashFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_splashFragment_to_clientMainFragment"
+            app:destination="@id/clientMainFragment" />
+        <action
+            android:id="@+id/action_splashFragment_to_empresaMainFragment"
+            app:destination="@id/empresaMainFragment" />
+        <action
+            android:id="@+id/action_splashFragment_to_adminMainFragment"
+            app:destination="@id/adminMainFragment" />
+        <!-- Agrega acciones para los otros destinos si es necesario -->
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.mueblar.ui.login.LoginFragment"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_loginFragment_to_registerFragment"
+            app:destination="@id/registerFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_clientMainFragment"
+            app:destination="@id/clientMainFragment"
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_loginFragment_to_empresaMainFragment"
+            app:destination="@id/empresaMainFragment"
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_loginFragment_to_adminMainFragment"
+            app:destination="@id/adminMainFragment"
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <!-- Flujo de registro -->
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.example.mueblar.ui.register.RegisterFragment"
+        tools:layout="@layout/fragment_register">
+        <action
+            android:id="@+id/action_registerFragment_to_registerSuccessFragment"
+            app:destination="@id/registerSuccessFragment" />
+        <action
+            android:id="@+id/action_registerFragment_to_mapaUbicacionActivity2"
+            app:destination="@id/mapaUbicacionActivity" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/registerSuccessFragment"
+        android:name="com.example.mueblar.ui.registersuccess.RegisterSuccessFragment"
+        tools:layout="@layout/fragment_register_success">
+        <action
+            android:id="@+id/action_registerSuccessFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <!-- Destinos principales -->
+    <fragment
+        android:id="@+id/adminMainFragment"
+        android:name="com.example.mueblar.ui.admin.AdminMainFragment"
+        tools:layout="@layout/fragment_admin_main">
+        <action
+            android:id="@+id/action_adminMainFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/clientMainFragment"
+        android:name="com.example.mueblar.ui.client.ClientMainFragment"
+        tools:layout="@layout/fragment_client_main">
+        <action
+            android:id="@+id/action_clientMainFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/empresaMainFragment"
+        android:name="com.example.mueblar.ui.empresa.EmpresaMainFragment"
+        tools:layout="@layout/fragment_empresa_main">
+        <action
+            android:id="@+id/action_empresaMainFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <!-- Acción global para cerrar sesión desde cualquier parte -->
+    <action
+        android:id="@+id/action_global_loginFragment"
+        app:destination="@id/loginFragment"
+        app:popUpTo="@id/nav_graph"
+        app:popUpToInclusive="true" />
+
+    <!-- Otros destinos -->
+    <activity
+        android:id="@+id/mapaUbicacionActivity"
+        android:name="com.example.mueblar.ui.ubicacion.MapaUbicacionActivity"
+        android:label="MapaUbicacionActivity" />
+
+</navigation>

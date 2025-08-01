@@ -60,41 +60,6 @@
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
-        <!-- Buscador con efectos glassmorphism -->
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:cardCornerRadius="20dp"
-            android:layout_marginBottom="24dp"
-            app:cardBackgroundColor="@color/glass_background_enhanced">
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="🔍 Buscar muebles..."
-                app:boxBackgroundColor="@android:color/transparent"
-                app:boxStrokeWidth="0dp"
-                app:startIconDrawable="@drawable/ic_client_search"
-                app:startIconTint="@color/ar_accent"
-                app:hintTextColor="@color/nav_inactive_enhanced"
-                app:boxCornerRadiusTopStart="20dp"
-                app:boxCornerRadiusTopEnd="20dp"
-                app:boxCornerRadiusBottomStart="20dp"
-                app:boxCornerRadiusBottomEnd="20dp"
-                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
-                android:layout_margin="4dp">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/etSearch"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/text_primary"
-                    android:textColorHint="@color/text_secondary"
-                    android:textSize="16sp"
-                    android:fontFamily="sans-serif"
-                    android:padding="16dp"/>
-            </com.google.android.material.textfield.TextInputLayout>
-        </androidx.cardview.widget.CardView>
 
         <!-- Título de productos destacados -->
         <LinearLayout

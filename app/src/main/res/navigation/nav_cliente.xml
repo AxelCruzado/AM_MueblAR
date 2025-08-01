@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_client"
+    app:startDestination="@id/clientHomeFragment">
+
+    <fragment
+        android:id="@+id/clientHomeFragment"
+        android:name="com.example.mueblar.ui.client.ClientHomeFragment"
+        android:label="fragment_client_home"
+        tools:layout="@layout/fragment_client_home">
+        <action
+            android:id="@+id/action_clientHomeFragment_to_productDetailFragment"
+            app:destination="@id/productDetailFragment">
+            <argument
+                android:name="producto"
+                app:argType="com.example.mueblar.data.model.Producto" />
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/clientProductosFragment"
+        android:name="com.example.mueblar.ui.client.ClientProductsFragment"
+        android:label="fragment_client_products"
+        tools:layout="@layout/fragment_client_products">
+        <action
+            android:id="@+id/action_clientProductosFragment_to_clientHomeFragment"
+            app:destination="@id/clientHomeFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/productDetailFragment"
+        android:name="com.example.mueblar.ui.producto.ProductDetailFragment"
+        android:label="fragment_product_detail"
+        tools:layout="@layout/fragment_product_detail">
+        <argument
+            android:name="producto"
+            app:argType="com.example.mueblar.data.model.Producto" />
+        <action
+            android:id="@+id/action_productDetailFragment_to_mapaFragment"
+            app:destination="@id/mapaFragment">
+            <argument
+                android:name="latitud"
+                app:argType="float" />
+            <argument
+                android:name="longitud"
+                app:argType="float" />
+            <argument
+                android:name="nombreEmpresa"
+                app:argType="string" />
+        </action>
+        <action
+            android:id="@+id/action_productDetailFragment_to_ARViewerFragment"
+            app:destination="@id/ARViewerFragment" />
+        <action
+            android:id="@+id/action_productDetailFragment_to_clientHomeFragment"
+            app:destination="@id/clientHomeFragment"
+            app:popUpTo="@id/clientHomeFragment"
+            app:popUpToInclusive="false" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/mapaFragment"
+        android:name="com.example.mueblar.ui.mapa.MapaFragment"
+        android:label="fragment_mapa"
+        tools:layout="@layout/fragment_mapa">
+        <argument
+            android:name="latitud"
+            app:argType="float" />
+        <argument
+            android:name="longitud"
+            app:argType="float" />
+        <argument
+            android:name="nombreEmpresa"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_mapaFragment_to_clientHomeFragment"
+            app:destination="@id/clientHomeFragment"
+            app:popUpTo="@id/clientHomeFragment"
+            app:popUpToInclusive="false" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/ARViewerFragment"
+        android:name="com.example.mueblar.ui.ar.ARViewerFragment"
+        android:label="fragment_a_r_viewer"
+        tools:layout="@layout/fragment_a_r_viewer">
+        <argument
+            android:name="modeloArUrl"
+            app:argType="string"
+            android:defaultValue="" />
+        <action
+            android:id="@+id/action_ARViewerFragment_to_clientHomeFragment"
+            app:destination="@id/clientHomeFragment"
+            app:popUpTo="@id/clientHomeFragment"
+            app:popUpToInclusive="false" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/clientPerfilFragment"
+        android:name="com.example.mueblar.ui.client.ClientPerfilFragment"
+        android:label="fragment_client_perfil"
+        tools:layout="@layout/fragment_client_perfil">
+        <action
+            android:id="@+id/action_clientPerfilFragment_to_clientHomeFragment"
+            app:destination="@id/clientHomeFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/clientFavoritoFragment"
+        android:name="com.example.mueblar.ui.client.ClientFavoritoFragment"
+        android:label="ClientFavoritoFragment">
+        <action
+            android:id="@+id/action_clientFavoritoFragment_to_clientHomeFragment"
+            app:destination="@id/clientHomeFragment" />
+    </fragment>
+</navigation>

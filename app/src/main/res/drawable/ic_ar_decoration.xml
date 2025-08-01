@@ -1,0 +1,73 @@
+
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="80dp"
+    android:height="80dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+
+    <!-- Cubo 3D base -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M12,2L4,6v6l8,4l8,-4V6L12,2z" />
+
+    <!-- Líneas de perspectiva -->
+    <path
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="0.5"
+        android:strokeLineCap="round"
+        android:pathData="M12,2v10" />
+
+    <path
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="0.5"
+        android:strokeLineCap="round"
+        android:pathData="M4,6l8,4l8,-4" />
+
+    <!-- Elementos AR decorativos -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M5,3h2v2H5V3z" />
+
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M17,3h2v2h-2V3z" />
+
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M5,15h2v2H5v-2z" />
+
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M17,15h2v2h-2v-2z" />
+
+    <!-- Líneas de conexión AR -->
+    <path
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="0.5"
+        android:strokeLineCap="round"
+        android:pathData="M6,4L4,6" />
+
+    <path
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="0.5"
+        android:strokeLineCap="round"
+        android:pathData="M18,4L20,6" />
+
+    <path
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="0.5"
+        android:strokeLineCap="round"
+        android:pathData="M6,16L4,12" />
+
+    <path
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="0.5"
+        android:strokeLineCap="round"
+        android:pathData="M18,16L20,12" />
+
+    <!-- Punto central AR -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M11.5,11.5h1v1h-1v-1z" />
+
+</vector>

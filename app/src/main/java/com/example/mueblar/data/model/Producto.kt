@@ -11,7 +11,7 @@ data class Producto(
     val precio: Double = 0.0,
     val imagenUrl: String = "", // Imagen del producto
     val modeloArUrl: String = "", // URL del modelo 3D para AR
-    val categoria: String = "", // opcional
+    val categoriaId: String = "",
     val disponible: Boolean = true,
     val fechaCreacion: Long = System.currentTimeMillis(), // en milisegundos
     val stock: Int = 1 // opcional, si quieres manejar cantidad
