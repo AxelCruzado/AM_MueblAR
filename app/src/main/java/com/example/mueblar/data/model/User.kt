@@ -5,5 +5,6 @@ data class User(
     val correo: String = "",
     val telefono: String = "",
     val ruc: String = "",
-    val tipoUsuario: String = ""
+    val tipoUsuario: String = "",
+    val dni:String =""
 )

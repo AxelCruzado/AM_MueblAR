@@ -5,7 +5,7 @@
     android:id="@+id/nav_graph"
     app:startDestination="@id/splashFragment">
 
-    <!-- Destino raíz: Login -->
+    <!-- Destino raíz: Splash -->
     <fragment
         android:id="@+id/splashFragment"
         android:name="com.example.mueblar.ui.splash.SplashFragment"
@@ -22,8 +22,9 @@
         <action
             android:id="@+id/action_splashFragment_to_adminMainFragment"
             app:destination="@id/adminMainFragment" />
-        <!-- Agrega acciones para los otros destinos si es necesario -->
     </fragment>
+
+    <!-- Login -->
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.example.mueblar.ui.login.LoginFragment"
@@ -46,6 +47,19 @@
             app:destination="@id/adminMainFragment"
             app:popUpTo="@id/nav_graph"
             app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_loginFragment_to_forgotPasswordFragment"
+            app:destination="@id/forgotPasswordFragment" />
+    </fragment>
+
+    <!-- Forgot Password -->
+    <fragment
+        android:id="@+id/forgotPasswordFragment"
+        android:name="com.example.mueblar.ui.login.ForgotPasswordFragment"
+        tools:layout="@layout/fragment_forgot_password">
+        <action
+            android:id="@+id/action_forgotPasswordFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
     </fragment>
 
     <!-- Flujo de registro -->

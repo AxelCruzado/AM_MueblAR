@@ -11,12 +11,15 @@ class LoginViewModel : ViewModel() {
 
     private val auth = FirebaseAuth.getInstance()
     private val db = FirebaseFirestore.getInstance()
+
     private val _isLoading = MutableLiveData<Boolean>()
     val isLoading: LiveData<Boolean> get() = _isLoading
 
-
     private val _loginResult = MutableLiveData<Quadruple<Boolean, String, String?, String?>?>()
     val loginResult: LiveData<Quadruple<Boolean, String, String?, String?>?> get() = _loginResult
+
+    private val _resetPasswordResult = MutableLiveData<Pair<Boolean, String>?>()
+    val resetPasswordResult: LiveData<Pair<Boolean, String>?> get() = _resetPasswordResult
 
     data class Quadruple<A, B, C, D>(val first: A, val second: B, val third: C, val fourth: D)
 
@@ -31,8 +34,7 @@ class LoginViewModel : ViewModel() {
             return
         }
 
-        _isLoading.value = true  // ⬅️ Loading ON
-
+        _isLoading.value = true
         auth.signInWithEmailAndPassword(email, password)
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
@@ -53,7 +55,7 @@ class LoginViewModel : ViewModel() {
                                             } else {
                                                 _loginResult.value = Quadruple(false, "No se encontró al usuario", null, null)
                                             }
-                                            _isLoading.value = false  // ⬅️ Loading OFF
+                                            _isLoading.value = false
                                         }
                                         .addOnFailureListener { e ->
                                             _loginResult.value = Quadruple(false, "Error al obtener datos de empresa: ${e.message}", null, null)
@@ -77,8 +79,29 @@ class LoginViewModel : ViewModel() {
             }
     }
 
+    fun resetPassword(email: String) {
+        if (!Validators.isValidEmail(email)) {
+            _resetPasswordResult.value = Pair(false, "Correo inválido")
+            return
+        }
+
+        _isLoading.value = true
+        auth.sendPasswordResetEmail(email)
+            .addOnCompleteListener { task ->
+                if (task.isSuccessful) {
+                    _resetPasswordResult.value = Pair(true, "Se ha enviado un enlace de restablecimiento a tu correo")
+                } else {
+                    _resetPasswordResult.value = Pair(false, "Error: ${task.exception?.message}")
+                }
+                _isLoading.value = false
+            }
+    }
 
     fun clearLoginResult() {
         _loginResult.value = null
+    }
+
+    fun clearResetPasswordResult() {
+        _resetPasswordResult.value = null
     }
 }

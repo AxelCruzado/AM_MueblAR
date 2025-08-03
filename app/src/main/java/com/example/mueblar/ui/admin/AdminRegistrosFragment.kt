@@ -38,11 +38,11 @@ class AdminRegistrosFragment : Fragment() {
             emptyList(),
             onAceptarClick = { empresa ->
                 viewModel.actualizarEstadoEmpresa(empresa, "aprobado")
-                Toast.makeText(context, "Empresa ${empresa.nombreEmpresa} aceptada exitosamente", Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, "Empresa ${empresa.nombre_empresa} aceptada exitosamente", Toast.LENGTH_SHORT).show()
             },
             onRechazarClick = { empresa ->
                 viewModel.actualizarEstadoEmpresa(empresa, "rechazado")
-                Toast.makeText(context, "Empresa ${empresa.nombreEmpresa} rechazada exitosamente", Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, "Empresa ${empresa.nombre_empresa} rechazada exitosamente", Toast.LENGTH_SHORT).show()
             }
         )
         binding.rvEmpresas.apply {
@@ -63,11 +63,11 @@ class AdminRegistrosFragment : Fragment() {
                 empresas,
                 onAceptarClick = { empresa ->
                     viewModel.actualizarEstadoEmpresa(empresa, "aprobado")
-                    Toast.makeText(context, "Empresa ${empresa.nombreEmpresa} aceptada exitosamente", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(context, "Empresa ${empresa.nombre_empresa} aceptada exitosamente", Toast.LENGTH_SHORT).show()
                 },
                 onRechazarClick = { empresa ->
                     viewModel.actualizarEstadoEmpresa(empresa, "rechazado")
-                    Toast.makeText(context, "Empresa ${empresa.nombreEmpresa} rechazada exitosamente", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(context, "Empresa ${empresa.nombre_empresa} rechazada exitosamente", Toast.LENGTH_SHORT).show()
                 }
             )
             binding.rvEmpresas.adapter = adapter

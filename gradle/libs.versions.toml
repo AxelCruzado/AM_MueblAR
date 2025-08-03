@@ -2,6 +2,7 @@
 activityKtx = "1.10.1"
 agp = "8.8.2"
 arsceneview = "2.3.0"
+ccp = "2.7.3"
 core = "1.50.0"
 firebaseBom = "33.16.0"
 firebaseFunctionsKtx = "21.2.1"
@@ -46,6 +47,7 @@ androidx-fragment-ktx-v162 = { module = "androidx.fragment:fragment-ktx", versio
 androidx-lifecycle-livedata-ktx-v262 = { module = "androidx.lifecycle:lifecycle-livedata-ktx", version.ref = "lifecycleLivedataKtxVersion" }
 androidx-lifecycle-runtime-ktx = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "lifecycleRuntimeKtx" }
 androidx-lifecycle-viewmodel-ktx-v262 = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "lifecycleViewmodelKtxVersion" }
+ccp = { module = "com.hbb20:ccp", version.ref = "ccp" }
 core = { module = "com.google.ar:core", version.ref = "core" }
 firebase-analytics = { module = "com.google.firebase:firebase-analytics" }
 firebase-bom = { module = "com.google.firebase:firebase-bom", version.ref = "firebaseBom" }

@@ -67,6 +67,10 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
         binding.tvRegistrar.setOnClickListener {
             findNavController().navigate(R.id.action_loginFragment_to_registerFragment)
         }
+
+        binding.tvForgotPassword.setOnClickListener {
+            findNavController().navigate(R.id.action_loginFragment_to_forgotPasswordFragment)
+        }
     }
 
     private fun updateFCMTokenAndNavigate(tipoUsuario: String?, estadoEmpresa: String?) {
@@ -97,13 +101,11 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
                 // Token ya estaba guardado, continúa sin actualizar Firestore
                 navigateToMain(tipoUsuario, estadoEmpresa)
             }
-
         }.addOnFailureListener {
             Toast.makeText(requireContext(), "Error al obtener token", Toast.LENGTH_SHORT).show()
             navigateToMain(tipoUsuario, estadoEmpresa)
         }
     }
-
 
     private fun navigateToMain(tipoUsuario: String?, estadoEmpresa: String?) {
         when (tipoUsuario) {

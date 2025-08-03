@@ -15,7 +15,7 @@ class EmpresaAdapter(
     inner class EmpresaViewHolder(private val binding: ItemEmpresaBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(empresa: Empresa) {
-            binding.tvNombreEmpresa.text = empresa.nombreEmpresa
+            binding.tvNombreEmpresa.text = empresa.nombre_empresa
             binding.tvRuc.text = "RUC: ${empresa.ruc}"
             binding.tvCorreo.text = "Correo: ${empresa.correo}"
             binding.btnAceptar.setOnClickListener { onAceptarClick(empresa) }

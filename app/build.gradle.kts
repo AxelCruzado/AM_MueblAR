@@ -115,7 +115,8 @@ dependencies {
 
     implementation (libs.json)
 
-
+    // Uilizar el CountryCodePicker, para verificar país
+    implementation (libs.ccp)
 }
 
 // Función para leer propiedades de secrets.properties
