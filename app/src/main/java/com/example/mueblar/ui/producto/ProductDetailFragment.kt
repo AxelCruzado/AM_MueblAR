@@ -71,7 +71,7 @@ class ProductDetailFragment : Fragment() {
         // Mostrar datos del producto en la UI
         binding.tvNombreProducto.text = nombreProducto
         binding.tvDescripcion.text = descripcion
-        binding.tvPrecio.text = precio.toString()
+        binding.tvPrecio.text = "S/. ${precio.toString()}"
         Glide.with(this)
             .load(imagenUrl)
             .into(binding.imgProducto)

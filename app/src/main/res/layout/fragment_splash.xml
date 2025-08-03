@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/splash_gradient_background">
+    android:background="@drawable/splashimage">
 
     <!-- Contenedor principal con animación -->
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -39,7 +39,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:text="MueblAR"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:textSize="32sp"
             android:textStyle="bold"
             android:fontFamily="sans-serif-light"
@@ -57,7 +57,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="48dp"
             android:text="Realidad Aumentada para Muebles"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:textSize="16sp"
             android:alpha="0.9"
             android:fontFamily="sans-serif"
