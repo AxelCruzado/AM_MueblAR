@@ -10,7 +10,10 @@
         android:id="@+id/adminEmpresasFragment"
         android:icon="@drawable/ic_empresas_administrador"
         android:title="Empresas" />
-
+    <item
+        android:id="@+id/adminClientesFragment"
+        android:icon="@drawable/ic_client_home"
+        android:title="Clientes" />
     <item
         android:id="@+id/adminRegistrosFragment"
         android:icon="@drawable/ic_registros_administrador"

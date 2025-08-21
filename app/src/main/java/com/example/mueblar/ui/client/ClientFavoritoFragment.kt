@@ -7,8 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.mueblar.R
 import com.example.mueblar.databinding.FragmentClientFavoriteBinding
 import com.example.mueblar.data.model.Producto
 
@@ -39,11 +39,18 @@ class ClientFavoritoFragment : Fragment() {
     }
 
     private fun setupRecyclerView() {
-        adapter = ProductoAdapter { producto, isFavorite ->
-            if (!isFavorite) {
-                viewModel.removeFavorite(producto)
+        adapter = ProductoAdapter(
+            onFavoriteClick = { producto, isFavorite ->
+                if (!isFavorite) {
+                    viewModel.removeFavorite(producto)
+                }
+            },
+            onItemClick = { producto ->
+                // Navegar a ProductDetailFragment
+                val action = ClientFavoritoFragmentDirections.actionClientFavoritoFragmentToProductDetailFragment(producto)
+                findNavController().navigate(action)
             }
-        }
+        )
         binding.rvFavorites.apply {
             layoutManager = LinearLayoutManager(context)
             adapter = this@ClientFavoritoFragment.adapter

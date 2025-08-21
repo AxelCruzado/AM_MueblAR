@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.mueblar.databinding.FragmentClientProductsBinding
 import com.example.mueblar.data.model.Producto
@@ -41,9 +42,16 @@ class ClientProductsFragment : Fragment() {
     }
 
     private fun setupRecyclerView() {
-        adapter = ProductoAdapter { producto, isFavorite ->
-            viewModel.toggleFavorite(producto, isFavorite)
-        }
+        adapter = ProductoAdapter(
+            onFavoriteClick = { producto, isFavorite ->
+                viewModel.toggleFavorite(producto, isFavorite)
+            },
+            onItemClick = { producto ->
+                // Usar el nombre correcto de la acción
+                val action = ClientProductsFragmentDirections.actionClientProductosFragmentToProductDetailFragment(producto)
+                findNavController().navigate(action)
+            }
+        )
         binding.rvProducts.apply {
             layoutManager = LinearLayoutManager(context)
             adapter = this@ClientProductsFragment.adapter

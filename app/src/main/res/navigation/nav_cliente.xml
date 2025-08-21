@@ -27,6 +27,13 @@
         <action
             android:id="@+id/action_clientProductosFragment_to_clientHomeFragment"
             app:destination="@id/clientHomeFragment" />
+        <action
+            android:id="@+id/action_clientProductosFragment_to_productDetailFragment"
+            app:destination="@id/productDetailFragment">
+            <argument
+                android:name="producto"
+                app:argType="com.example.mueblar.data.model.Producto" />
+        </action>
     </fragment>
 
     <fragment
@@ -114,5 +121,12 @@
         <action
             android:id="@+id/action_clientFavoritoFragment_to_clientHomeFragment"
             app:destination="@id/clientHomeFragment" />
+        <action
+            android:id="@+id/action_clientFavoritoFragment_to_productDetailFragment"
+            app:destination="@id/productDetailFragment">
+            <argument
+                android:name="producto"
+                app:argType="com.example.mueblar.data.model.Producto" />
+        </action>
     </fragment>
 </navigation>

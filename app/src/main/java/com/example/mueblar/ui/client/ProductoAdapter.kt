@@ -13,7 +13,8 @@ import com.example.mueblar.R
 import com.example.mueblar.data.model.Producto
 
 class ProductoAdapter(
-    private val onFavoriteClick: (Producto, Boolean) -> Unit
+    private val onFavoriteClick: (Producto, Boolean) -> Unit,
+    private val onItemClick: (Producto) -> Unit // Nuevo callback para clics en el elemento
 ) : ListAdapter<Producto, ProductoAdapter.ProductoViewHolder>(ProductoDiffCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductoViewHolder {
@@ -48,8 +49,14 @@ class ProductoAdapter(
                 else R.drawable.ic_offfavorite
             )
 
+            // Listener para clic en favorito
             ivFavorite.setOnClickListener {
                 onFavoriteClick(producto, !producto.isFavorite)
+            }
+
+            // Listener para clic en el elemento completo
+            itemView.setOnClickListener {
+                onItemClick(producto)
             }
         }
     }
@@ -64,7 +71,6 @@ class ProductoAdapter(
         }
     }
 
-    // Extensión para manejar el estado de favorito en el adaptador
     fun updateFavoriteStatus(productoId: String, isFavorite: Boolean) {
         val producto = currentList.find { it.productoId == productoId }
         producto?.isFavorite = isFavorite
